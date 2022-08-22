@@ -210,7 +210,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(){
+  for (let i = 0; i < namesArr.length; i++){
+    console.log(namesArr[i])
+  }
+}
 
+printAllNames(namesArr)
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -222,6 +228,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
+function thatsOdd(num){
+  if(num%2 === 0){
+    console.log("That's not odd!")
+  }else
+    console.log("That is odd indeed!")
+}
+let oddChecker = thatsOdd(5)
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -234,7 +247,8 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const bestMovie = (movieParam) => (`${movieParam} is the best movie ever!`)
+console.log(bestMovie('Twister'))
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -248,6 +262,20 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+// function bigOrSmall(){
+  function bigOrSmall(){
+    let answers = []
+    for (let i = 0; i < bigOrSmallArray.length; i++){
+      if(bigOrSmallArray[i] > 100){
+        answers.push('big')
+      }else
+        answers.push('small')
+    }
+    arrayEvaluator = answers
+    console.log(arrayEvaluator)
+  }
+     
+  bigOrSmall()
 
 
 ////////////////// PROBLEM 16 ////////////////////
@@ -259,7 +287,15 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
+function theEliminator(contestants,loser){
+  for (let i = 0; i < contestants.length; i++){
+    if (contestants[i] === loser){
+      contestants.splice(i,1)
+    } 
+  }console.log(contestants)
+}
 
+theEliminator(contestants, loser)
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -269,7 +305,11 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+function upperCase(){
+  sampleString2 = sampleString.toUpperCase()
+  console.log(sampleString2)
+}
+upperCase()
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -282,22 +322,57 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+function emailCheck(email){
+  let newEmail = String(email)
+  let trimEmail = newEmail.trim()
+  console.log(trimEmail)
+
+  if(trimEmail.includes('@')){
+    console.log('email verified')
+  } else {
+    console.log('Must provide a valid email address')
+  }
+}
+emailCheck('   abcdef@gmail.com   ')
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
-  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
+  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with 
+  a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which 
+  is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you 
+  were able to purchase.
+  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you 
+  are willing to spend.
 */
 
 //CODE HERE
 
+function spendLimit(myGold){
+  return myGold/3 
+}
+let totalFrogs = spendLimit
+console.log(spendLimit(30))
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
-  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
+  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function 
+  would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just 
+  be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, 
+  just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a 
+  variable called `totalFrogs2`.
 */
 
 //CODE HERE
-
+function spendLimit2(myGold){
+  if(myGold%3 === 0){
+    return myGold/3 
+  }else if((myGold-1)%3 === 0){
+    return(myGold-1)/3
+  }else
+    return(myGold-2)/3
+  }
+let totalFrogs2 = spendLimit2
+console.log(spendLimit2(4))
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
