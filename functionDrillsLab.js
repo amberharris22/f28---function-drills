@@ -323,11 +323,11 @@ upperCase()
 */
 
 function emailCheck(email){
-  let newEmail = String(email)
-  let trimEmail = newEmail.trim()
-  console.log(trimEmail)
+  email = String(email)
+  email = email.trim()
+  // console.log(email)
 
-  if(trimEmail.includes('@')){
+  if(email.includes('@')){
     console.log('email verified')
   } else {
     console.log('Must provide a valid email address')
@@ -381,7 +381,17 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
-
+function checkArrayAscending(arr){
+  let comparisonValue = arr[0]
+  for(let i = 0; i< sampleArray.length; i++)
+   if( i+1 <= comparisonValue){
+    return false
+   }else {
+    comparisonValue = arr[i]
+   }
+   return true
+}
+console.log(checkArrayAscending(sampleArray))
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -405,13 +415,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['rubberDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['sailorDuck', 'rubberDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['realDuck', 'duck']
