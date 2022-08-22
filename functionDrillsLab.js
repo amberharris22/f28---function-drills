@@ -364,14 +364,9 @@ console.log(spendLimit(30))
 
 //CODE HERE
 function spendLimit2(myGold){
-  if(myGold%3 === 0){
-    return myGold/3 
-  }else if((myGold-1)%3 === 0){
-    return(myGold-1)/3
-  }else
-    return(myGold-2)/3
-  }
-let totalFrogs2 = spendLimit2
+  return Math.floor(myGold/3)
+}
+  let totalFrogs2 = spendLimit2
 console.log(spendLimit2(4))
 
 ////////////////// PROBLEM 21 ////////////////////
